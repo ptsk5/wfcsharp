@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wfcsharp
+  labels:
+    app: wfcsharp
+spec:
+  selector:
+    matchLabels:
+      app: wfcsharp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: wfcsharp
+    spec:
+      containers:
+        - name: wfcsharp
+          image: quay.io/jpetnik/wfcsharp:v1
+          ports:
+            - containerPort: 5284
+          imagePullPolicy: Always

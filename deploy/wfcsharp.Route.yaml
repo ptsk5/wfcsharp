@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: wfcsharp
+  labels:
+    app: wfcsharp
+spec:
+  to:
+    kind: Service
+    name: wfcsharp
+  port:
+    targetPort: 5284
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

@@ -38,3 +38,10 @@ podman push quay.io/jpetnik/wfcsharp:v1
 podman run -d --rm -p 5284:5284 quay.io/jpetnik/wfcsharp:v1
 curl http://localhost:5284/weatherforecast
 ```
+
+## Deploy into Red Hat OpenShift Container Platform
+
+```bash
+oc new-project wfcsharp
+oc apply -f ./deploy
+```
