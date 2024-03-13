@@ -5,7 +5,9 @@ RUN dotnet restore
 RUN dotnet publish -c Release -o app
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
-ENV ASPNETCORE_URLS=http://0.0.0.0:5284
+ENV ASPNETCORE_URLS=http://0.0.0.0:5284 \
+    # to get Swagger UI too
+    ASPNETCORE_ENVIRONMENT=Development 
 WORKDIR /app
 COPY --from=build /build/app .
 EXPOSE 5284
