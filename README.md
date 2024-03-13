@@ -4,8 +4,8 @@ A default webapi project that returns random weather forecasts for the next five
 
 ## Prerequisites for vscode
 
-[C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
-[.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
 ## Create a project
 
