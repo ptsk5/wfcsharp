@@ -23,7 +23,7 @@ curl http://localhost:5284/weatherforecast
 ## API endpoints
 
 - `/weatherforecast` - `WeatherForecast` endpoint
-- `/swagger/index.html` - the Swagger page (not available in the container)
+- `/swagger/index.html` - the Swagger page
 
 ## Build an image and push it to the image repository
 
