@@ -4,12 +4,15 @@ COPY . .
 RUN dotnet restore
 RUN dotnet publish -c Release -o app
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM registry.access.redhat.com/ubi8/dotnet-80-runtime:8.0 AS final
 ENV ASPNETCORE_URLS=http://0.0.0.0:5284 \
     # to get Swagger UI too
     ASPNETCORE_ENVIRONMENT=Development 
-WORKDIR /app
-COPY --from=build /build/app .
+COPY --chown=1001:0 --from=build /build/app .
+RUN fix-permissions .
+
 EXPOSE 5284
 
-ENTRYPOINT ["dotnet", "wfCSharp.dll"]
+USER 1001
+
+CMD ["dotnet", "wfCSharp.dll"]
